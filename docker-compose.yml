@@ -68,7 +68,7 @@ services:
 ######################################################################################
 
   indexer-service-mainnet:
-    image: ${INDEXER_SERVICE_MAINNET_VERSION:-ghcr.io/graphprotocol/indexer-service:v0.20.8}
+    image: ${INDEXER_SERVICE_MAINNET_VERSION:-ghcr.io/graphprotocol/indexer-service:v0.20.9}
     container_name: indexer-service-mainnet
     depends_on:
       - index-node-0
@@ -111,7 +111,7 @@ services:
 ######################################################################################
 
   indexer-service-testnet:
-    image: ${INDEXER_SERVICE_TESTNET_VERSION:-ghcr.io/graphprotocol/indexer-service:v0.20.8}
+    image: ${INDEXER_SERVICE_TESTNET_VERSION:-ghcr.io/graphprotocol/indexer-service:v0.20.9}
     container_name: indexer-service-testnet
     depends_on:
       - index-node-0
@@ -156,7 +156,7 @@ services:
 ######################################################################################
 
   indexer-agent-mainnet:
-    image: ${INDEXER_AGENT_MAINNET_VERSION:-ghcr.io/graphprotocol/indexer-agent:v0.20.8}
+    image: ${INDEXER_AGENT_MAINNET_VERSION:-ghcr.io/graphprotocol/indexer-agent:v0.20.9}
     container_name: indexer-agent-mainnet
     depends_on:
       - index-node-0
@@ -179,7 +179,7 @@ services:
       INDEXER_AGENT_VOUCHER_REDEMPTION_THRESHOLD: ${VOUCHER_REDEMPTION_THRESHOLD_MAINNET:-200}
       INDEXER_AGENT_VOUCHER_REDEMPTION_BATCH_THRESHOLD: ${VOUCHER_REDEMPTION_BATCH_THRESHOLD_MAINNET:-2000}
       INDEXER_AGENT_VOUCHER_REDEMPTION_MAX_BATCH_SIZE: ${VOUCHER_REDEMPTION_MAX_BATCH_SIZE_MAINNET:-100}
-      INDEXER_AGENT_ETHEREUM_NETWORK: mainnet
+      INDEXER_AGENT_ETHEREUM_NETWORK: goerli
       INDEXER_AGENT_ETHEREUM: ${TXN_RPC_MAINNET}
       INDEXER_AGENT_GRAPH_NODE_QUERY_ENDPOINT: http://query-node-0:8000
       INDEXER_AGENT_GRAPH_NODE_STATUS_ENDPOINT: http://index-node-0:8030/graphql
@@ -211,7 +211,7 @@ services:
 ######################################################################################
 
   indexer-agent-testnet:
-    image: ${INDEXER_AGENT_TESTNET_VERSION:-ghcr.io/graphprotocol/indexer-agent:v0.20.8}
+    image: ${INDEXER_AGENT_TESTNET_VERSION:-ghcr.io/graphprotocol/indexer-agent:v0.20.9}
     container_name: indexer-agent-testnet
     depends_on:
       - index-node-0
